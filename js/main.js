@@ -32,14 +32,12 @@ const quotes = [
   ];
   
   function display() {
-    for (let i = 0; i < quotes.length; i++) {
       const randomIndex = Math.floor(Math.random() * quotes.length);
       const quote = quotes[randomIndex];
       document.getElementById('say').innerHTML = `" ${quote.quote}"`;
       document.getElementById('name').innerHTML = `" ${quote.name}"`;
-      break;
     }
-  }
+
 
 
 
