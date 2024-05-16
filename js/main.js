@@ -27,15 +27,20 @@ const quotes = [
   }
 ];
 
+
+let lastIndex = -1;
+
 function display() {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    const quote = quotes[randomIndex];
-    document.getElementById('say').innerHTML = `" ${quote.quote}"`;
-    document.getElementById('name').innerHTML = `" ${quote.name}"`;
-  }
+  let randomIndex;
+  do {
+    randomIndex = Math.floor(Math.random() * quotes.length);
+  } while (randomIndex === lastIndex);
+  lastIndex = randomIndex;
 
-
-
+  const quote = quotes[randomIndex];
+  document.getElementById('say').innerHTML = `" ${quote.quote}"`;
+  document.getElementById('name').innerHTML = `" ${quote.name}"`;
+}
 
 
 
